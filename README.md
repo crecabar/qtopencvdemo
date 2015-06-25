@@ -22,18 +22,20 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = QtViewer
 TEMPLATE = app
 
+SOURCES += Sources/main.cpp\
+    Sources/mainwindow.cpp \
+    Sources/cqtopencvviewergl.cpp
+
+HEADERS  += Headers/mainwindow.h \
+    Headers/cqtopencvviewergl.h
+
+FORMS    += Forms/mainwindow.ui
+
+INCLUDEPATH += Headers
+
+# External libraries
 INCLUDEPATH += <your path to opencv includes>
-LIBS += <your path to opencv libraries> -lopencv_core -lopencv_highgui
-
-
-SOURCES += main.cpp\
-        mainwindow.cpp \
-    cqtopencvviewergl.cpp
-
-HEADERS  += mainwindow.h \
-    cqtopencvviewergl.h
-
-FORMS    += mainwindow.ui
+LIBS += -L<your path to opencv libraries> -lopencv_core -lopencv_highgui
 ```
 And finnaly compile:
 ```
