@@ -1,0 +1,28 @@
+#-------------------------------------------------
+#
+# QtViewer Project Sample
+#
+# Edit it to match your local configuration and paths
+# and save it as QtViewer.pro
+#
+#-------------------------------------------------
+
+QT       += core gui opengl
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+TARGET = QtViewer
+TEMPLATE = app
+
+INCLUDEPATH += <your path to opencv includes>
+LIBS += -L<your path to opencv libraries> -lopencv_core -lopencv_highgui
+
+
+SOURCES += main.cpp\
+        mainwindow.cpp \
+    cqtopencvviewergl.cpp
+
+HEADERS  += mainwindow.h \
+    cqtopencvviewergl.h
+
+FORMS    += mainwindow.ui
