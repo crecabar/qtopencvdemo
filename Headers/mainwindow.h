@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <opencv2/highgui/highgui.hpp>
+#include <unistd.h>
+#include <iostream>
 
 namespace Ui {
 class MainWindow;
@@ -19,13 +21,16 @@ public:
 private slots:
     void on_actionStart_triggered();
 
+    void on_actionStop_triggered();
+
     void on_actionVertical_Flip_triggered(bool checked);
 
     void on_actionHorizontal_Mirror_triggered(bool checked);
 
 private:
     Ui::MainWindow *ui;
-    cv::VideoCapture mCapture;
+    cv::VideoCapture mCapture1;
+    cv::VideoCapture mCapture2;
 
 protected:
     void timerEvent(QTimerEvent *event);
